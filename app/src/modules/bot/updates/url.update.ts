@@ -37,7 +37,7 @@ export class UrlBotUpdate {
         });
     }
 
-    @Command('save')
+    @Command('create')
     save(@Ctx() ctx: SceneContext): void {
         ctx.scene.enter(CreateUrlWizard.name);
     }
