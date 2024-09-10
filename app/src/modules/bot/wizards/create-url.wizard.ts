@@ -20,7 +20,6 @@ export class CreateUrlWizard {
         @Ctx() ctx: WizardContext,
         @Message() msg: { text: string }
     ): Promise<void> {
-
         if (!validUrl.isUri(msg.text)) {
             await ctx.reply('Это невалидная ссылка. Пожалуйста, введите правильный URL.');
             ctx.wizard.selectStep(1);

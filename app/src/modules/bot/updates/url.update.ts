@@ -97,7 +97,8 @@ export class UrlBotUpdate {
             return;
         }
 
-        const isDeleted = await this.urlService.deleteOneByCode(code);
+        const userId = ctx.from!.id;
+        const isDeleted = await this.urlService.deleteOneByCodeAndUserId(code, userId);
         if (isDeleted) {
             await ctx.reply('Ссылка удалена.');
         } else {

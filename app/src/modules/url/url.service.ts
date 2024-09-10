@@ -25,9 +25,13 @@ export class UrlService {
         return this.urlModel.findOne({ code }).exec();
     }
 
-    async deleteOneByCode(code: string): Promise<boolean> {
-        const result = await this.urlModel.deleteOne({ code }).exec();
-        return Boolean(result.deletedCount);
+    async deleteOneByCodeAndUserId(code: string, userTelegramId: number): Promise<boolean> {
+        const result = await this.urlModel.findOneAndDelete({
+            code,
+            userTelegramId,
+        }).exec();
+
+        return Boolean(result);
     }
 
     findAll(): Promise<UrlDocument[]> {
