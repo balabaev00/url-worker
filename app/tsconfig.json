@@ -1,0 +1,26 @@
+{
+  "include": ["src/**/*", "test/**/*"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDirs": ["src", "database", "test"],
+    "module": "commonjs",
+    "target": "ES2021",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@health/*": ["src/modules/health/*"],
+      "@bot/*": ["src/modules/bot/*"],
+      "@common/*": ["src/common/*"]
+    }
+  }
+}
